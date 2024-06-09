@@ -1,66 +1,36 @@
-// src/App.js
 import React from 'react';
-import PriceCard from './PriceCard';
-import './App.css'; // Optional: Add global styles if needed
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import All from './components/All';
+import FullStack from './components/FullStack';
+import DataScience from './components/DataScience';
+import CyberSecurity from './components/CyberSecurity';
+import Career from './components/Career';
+import './styles.css';
 
-const App = () => {
-  const plans = [
-    {
-      plan: 'FREE',
-      price: '$0/month',
-      features: [
-        { name: 'Single User', available: true },
-        { name: '50GB Storage', available: true },
-        { name: 'Unlimited Public Projects', available: true },
-        { name: 'Community Access', available: true },
-        { name: 'Unlimited Private Projects', available: false },
-        { name: 'Dedicated Phone Support', available: false },
-        { name: 'Free Subdomain', available: false },
-        { name: 'Monthly Status Reports', available: false }
-      ]
-    },
-    {
-      plan: 'PLUS',
-      price: '$9/month',
-      features: [
-        { name: '5 Users', available: true },
-        { name: '50GB Storage', available: true },
-        { name: 'Unlimited Public Projects', available: true },
-        { name: 'Community Access', available: true },
-        { name: 'Unlimited Private Projects', available: true },
-        { name: 'Dedicated Phone Support', available: true },
-        { name: 'Free Subdomain', available: true },
-        { name: 'Monthly Status Reports', available: false }
-      ]
-    },
-    {
-      plan: 'PRO',
-      price: '$49/month',
-      features: [
-        { name: 'Unlimited Users', available: true },
-        { name: '50GB Storage', available: true },
-        { name: 'Unlimited Public Projects', available: true },
-        { name: 'Community Access', available: true },
-        { name: 'Unlimited Private Projects', available: true },
-        { name: 'Dedicated Phone Support', available: true },
-        { name: 'Free Subdomain', available: true },
-        { name: 'Monthly Status Reports', available: true }
-      ]
-    }
-  ];
 
-  return (
-    <div className="App">
-      {plans.map((plan, index) => (
-        <PriceCard
-          key={index}
-          plan={plan.plan}
-          price={plan.price}
-          features={plan.features}
-        />
-      ))}
-    </div>
-  );
-};
+function App() {
+    return (
+        <Router>
+            <div>
+                <nav>
+                    <ul>
+                        <li><Link to="/">All</Link></li>
+                        <li><Link to="/fullstack">Full Stack Development</Link></li>
+                        <li><Link to="/datascience">Data Science</Link></li>
+                        <li><Link to="/cybersecurity">Cyber Security</Link></li>
+                        <li><Link to="/career">Career</Link></li>
+                    </ul>
+                </nav>
+                <Routes>
+                    <Route path="/" element={<All />} />
+                    <Route path="/fullstack" element={<FullStack />} />
+                    <Route path="/datascience" element={<DataScience />} />
+                    <Route path="/cybersecurity" element={<CyberSecurity />} />
+                    <Route path="/career" element={<Career />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+}
 
 export default App;
