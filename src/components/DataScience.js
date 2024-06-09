@@ -1,10 +1,17 @@
+// src/components/DataScience.js
 import React from 'react';
+import datascienceImg from '../images/datascience.jpeg';
 
 function DataScience() {
     return (
-        <div>
+        <div className="content">
             <h2>Data Science</h2>
-            <div>Content for Data Science</div>
+            <div className="card">
+                <img src={datascienceImg} alt="Data Science" />
+                <div>
+                    Content for Data Science
+                </div>
+            </div>
         </div>
     );
 }

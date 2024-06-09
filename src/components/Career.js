@@ -1,10 +1,17 @@
+// src/components/Career.js
 import React from 'react';
+import careerImg from '../images/career.jpeg';
 
 function Career() {
     return (
-        <div>
+        <div className="content">
             <h2>Career</h2>
-            <div>Content for Career</div>
+            <div className="card">
+                <img src={careerImg} alt="Career" />
+                <div>
+                    Content for Career
+                </div>
+            </div>
         </div>
     );
 }

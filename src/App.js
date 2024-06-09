@@ -1,3 +1,4 @@
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import All from './components/All';
@@ -7,13 +8,12 @@ import CyberSecurity from './components/CyberSecurity';
 import Career from './components/Career';
 import './styles.css';
 
-
 function App() {
     return (
         <Router>
             <div>
                 <nav>
-                    <ul>
+                    <ul className="navigation">
                         <li><Link to="/">All</Link></li>
                         <li><Link to="/fullstack">Full Stack Development</Link></li>
                         <li><Link to="/datascience">Data Science</Link></li>
